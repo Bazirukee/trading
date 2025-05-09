@@ -63,3 +63,16 @@ body.dark-mode .is-invalid {
     border-color: #dc3545;
     background-color: #561818;
 }
+
+/* Ensure readability of result text in dark mode */
+body.dark-mode #results p {
+    color: #eaeaea; /* Make sure text is visible on dark background */
+}
+
+body.dark-mode #results {
+    background-color: #333;
+    color: #eaeaea; /* Ensure text inside the sticky result box is also readable */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}

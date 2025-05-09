@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trading Calculator</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Trading Calculator</h2>
+
+        <!-- Trade Type -->
+        <div class="mb-3">
+            <label class="form-label">Trade Type</label>
+            <select class="form-select" id="tradeType" onchange="updateLabel()">
+                <option value="long">Long</option>
+                <option value="short">Short</option>
+            </select>
+        </div>
+
+        <!-- Entry Price -->
+        <div class="mb-3">
+            <label class="form-label" id="entryLabel">Buy Price</label>
+            <input type="number" class="form-control" id="entryPrice" placeholder="Enter entry price" />
+        </div>
+
+        <!-- Stop Loss -->
+        <div class="mb-3">
+            <label class="form-label">Stop Loss</label>
+            <input type="number" class="form-control" id="stopLoss" placeholder="Enter stop loss" />
+        </div>
+
+        <!-- Risk Reward -->
+        <div class="mb-3">
+            <label class="form-label">Risk-Reward Ratio</label>
+            <select class="form-select" id="rrRatio">
+                <option value="2">1:2</option>
+                <option value="3">1:3</option>
+                <option value="4">1:4</option>
+            </select>
+        </div>
+
+        <!-- Capital -->
+        <div class="mb-3">
+            <label class="form-label">Capital (USD)</label>
+            <input type="number" class="form-control" id="capital" placeholder="e.g., 10000" />
+        </div>
+
+        <!-- Risk % -->
+        <div class="mb-3">
+            <label class="form-label">Risk per Trade (%)</label>
+            <input type="number" class="form-control" id="riskPercent" placeholder="e.g., 2" value="2" />
+        </div>
+
+        <!-- Button -->
+        <button class="btn btn-primary" onclick="calculateTrade()">Calculate</button>
+
+        <!-- Results -->
+        <div class="mt-4">
+            <p><strong>Profit Target:</strong> <span id="profitTarget">—</span></p>
+            <p><strong>Position Size:</strong> <span id="positionSize">—</span></p>
+            <p><strong>Potential Profit:</strong> <span id="profit">—</span></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,3 +1,18 @@
+function toggleTheme() {
+    const body = document.body;
+    const toggleButton = document.getElementById("themeToggle");
+
+    // Toggle between light and dark mode
+    body.classList.toggle("dark-mode");
+
+    // Change button text
+    if (body.classList.contains("dark-mode")) {
+        toggleButton.textContent = "Switch to Light Mode";
+    } else {
+        toggleButton.textContent = "Switch to Dark Mode";
+    }
+}
+
 function updateLabel() {
     const tradeType = document.getElementById("tradeType").value;
     const label = document.getElementById("entryLabel");

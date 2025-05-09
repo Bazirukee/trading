@@ -7,15 +7,21 @@ body {
 .container {
     max-width: 600px;
     background: #fff;
-    padding: 2rem;
+    padding: 2rem 3rem;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, box-shadow 0.3s;
     padding-bottom: 100px; /* Make room for sticky results */
 }
 
-button {
+ button {
     width: 100%;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0069d9; /* Change to a brighter blue */
+    transform: scale(1.05); /* Slightly scale button on hover */
 }
 
 input.is-invalid, select.is-invalid {
@@ -27,9 +33,18 @@ input:focus, select:focus {
     box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
+h2 {
+    font-weight: bold;
+    font-size: 2rem; /* Slightly bigger heading */
+}
+
+.form-label {
+    font-weight: 600; /* Bold for better emphasis */
+}
+
 .mt-4 p {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500; /* Medium weight to balance readability */
 }
 
 /* Sticky Results */
@@ -37,7 +52,7 @@ input:focus, select:focus {
     position: sticky;
     bottom: 0;
     background-color: #fff;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
